@@ -1,0 +1,1323 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Liter&display=swap');
+
+@import 'tailwindcss';
+
+*,
+*::after,
+*::before {
+  font-family: 'Liter', sans-serif;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+.container {
+  @apply max-w-[73%] mx-auto;
+}
+
+.hero-section {
+  @apply relative top-0 left-0 w-full h-[540px] md:h-[410px] lg:h-[570px] mb-3;
+}
+
+.text-content {
+  @apply absolute left-0 md:w-100 right-0 bottom-[20px] md:bottom-[24px] lg:bottom-[38px] md:left-[30px] md:right-[128px] lg:left-[47px] lg:right-[175px]  flex flex-col-reverse md:flex-row items-center mx-auto justify-start gap-2 md:gap-4 text-center opacity-95 lg:w-[778px];
+}
+
+/* gallery */
+
+.fam-gallery {
+  --fam-item-width: 417px;
+  --fam-item-height: 236px;
+  --fam-item-margin: 15px;
+  --fam-copy-x-padding: 15px;
+  --fam-copy-y-padding: 20px;
+  --fam-album-size: 196px;
+}
+
+@media screen and (max-width: 1068px) {
+  .fam-gallery {
+    --fam-item-width: 286px;
+    --fam-item-height: 161px;
+    --fam-copy-y-padding: 15px;
+    --fam-album-size: 131px;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .fam-gallery {
+    --fam-item-width: 238px;
+    --fam-item-height: 134px;
+    --fam-item-margin: 6px;
+    --fam-copy-x-padding: 10px;
+    --fam-copy-y-padding: 10px;
+    --fam-album-size: 114px;
+  }
+}
+
+.item-width {
+  @apply w-[var(--fam-item-width)];
+}
+
+.item-height {
+  @apply h-[var(--fam-item-height)];
+}
+
+.fam-gallery-music {
+  @apply lg:absolute top-[50%] lg:translate-y-[50%];
+  left: calc(var(--fam-album-size) + var(--fam-copy-x-padding) * 2);
+}
+
+.fam-gallery-logo-music {
+  @apply w-[41px] md:w-[46px] lg:w-[59px];
+}
+
+.fam-gallery-logo-arcade {
+  @apply w-[49px] md:w-[53px] lg:w-[68px];
+}
+
+.fam-gallery-logo-fitness {
+  @apply w-[55px] md:w-[61px] lg:w-[78px];
+}
+
+svg:not(:root) {
+  overflow-clip-margin: content-box;
+  overflow: hidden;
+}
+
+.fill-black {
+  fill: #000 !important;
+}
+
+.fam-gallery-logo {
+  fill: #fff;
+  @apply h-[19px] md:h-[18px] lg:h-[21px] absolute bottom-0 right-0;
+  margin-right: var(--fam-copy-x-padding);
+  margin-bottom: var(--fam-copy-y-padding);
+}
+
+.fam-gallery-overlay {
+  @apply w-full h-full bg-[rgba(0,0,0,0.4)] flex justify-center items-center absolute top-0 left-0 z-10 opacity-0 transition-opacity duration-300;
+}
+
+.fam-gallery-button {
+  @apply cursor-pointer inline-block text-center whitespace-nowrap rounded-[18px] text-[14px] leading-[1.42859] font-normal min-w-[30px] px-[15px] py-[7px] translate-y-[15px] transition-transform duration-300;
+}
+
+.fam-gallery-copy {
+  @apply lg:w-[70%] lg:absolute bottom-0;
+}
+
+.fam-gallery-bg::before {
+  content: '';
+  background: linear-gradient(0deg, rgba(29, 29, 31, 0.5) 0%, transparent 50%);
+  @apply block w-full h-full absolute bottom-0 pointer-events-none;
+}
+
+.fam-gallery-play-pause {
+  @apply relative flex items-center justify-center w-[24px] h-[24px] m-4 rounded-full bg-[#d2d2d7] cursor-pointer;
+}
+
+.fam-gallery-play-pause.paused:after,
+.fam-gallery-play-pause.playing:after {
+  content: '';
+  @apply inline-block w-[12px] h-[12px] absolute bg-[12px] bg-black pointer-events-none;
+}
+
+.fam-gallery-play-pause.paused::after {
+  content: '';
+  -webkit-mask: url('./assets/logos/play.svg');
+  mask: url('./assets/logos/play.svg');
+}
+
+.fam-gallery-play-pause.playing::after {
+  content: '';
+  -webkit-mask: url('./assets/logos/pause.svg');
+  mask: url('./assets/logos/pause.svg');
+}
+
+@media screen and (max-width: 1068px) {
+  .fam-gallery-music {
+    margin-top: var(--fam-copy-y-padding);
+  }
+
+  .fam-gallery-copy {
+    width: var(--fam-item-width);
+    padding-left: 0;
+    padding-bottom: 0;
+    margin-top: var(--fam-copy-y-padding);
+  }
+}
+
+.fam-gallery-album-art {
+  @apply w-[var(--fam-album-size)] h-[var(--fam-album-size)] bg-contain absolute top-[var(--fam-copy-y-padding)] lg:left-[var(--fam-copy-x-padding)] left-[50%] lg:-translate-x-0 -translate-x-[50%] rounded-[8px];
+  filter: drop-shadow(3px 5px 30px rgba(0, 0, 0, 0.22));
+}
+
+@media only screen and (min-resolution: 1.5dppx), (min-resolution: 144dpi) {
+  .bg-kendrick {
+    background-image: url('./assets/features/kendrick/392x392sr.jpg');
+  }
+
+  .bg-alpha {
+    background-image: url('./assets/features/alpha/392x392SC.DN01.jpg');
+  }
+
+  .bg-arcade {
+    background-image: url('./assets/features/arcade/834x472.jpg');
+  }
+
+  .bg-fitness {
+    background-image: url('./assets/features/strength/834x472.jpg');
+  }
+}
+
+.bg-kendrick {
+  background-image: url('./assets/features/kendrick/196x196sr.jpg');
+  background-repeat: no-repeat;
+}
+
+.bg-alpha {
+  background-image: url('./assets/features/alpha/196x196SC.DN01.jpg');
+}
+
+.bg-arcade {
+  width: 417px;
+  height: 236px;
+  background-size: 417px 236px;
+  background-image: url('./assets/features/arcade/417x236.jpg');
+}
+
+.bg-fitness {
+  width: 417px;
+  height: 236px;
+  background-size: 417px 236px;
+  background-image: url('./assets/features/strength/417x236.jpg');
+}
+
+.bg-kitty-island {
+  width: 417px;
+  height: 236px;
+  background-size: 417px 236px;
+  background-image: url('./assets/features/kitty-island/417x236.jpg');
+}
+
+.bg-workout {
+  width: 417px;
+  height: 236px;
+  background-size: 417px 236px;
+  background-image: url('./assets/features/workout/417x236.jpg');
+}
+
+@media only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+  .bg-kendrick {
+    background-image: url('./assets/features/kendrick/262x262sr.jpg');
+  }
+
+  .bg-alpha {
+    background-image: url('./assets/features/alpha/262x262SC.DN01.jpg');
+  }
+
+  .bg-arcade {
+    background-image: url('./assets/features/arcade/572x322.jpg');
+  }
+
+  .bg-fitness {
+    background-image: url('./assets/features/strength/572x322.jpg');
+  }
+
+  .bg-kitty-island {
+    background-image: url('./assets/features/kitty-island/834x472.jpg');
+  }
+
+  .bg-workout {
+    background-image: url('./assets/features/workout/834x472.jpg');
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-kendrick {
+    background-image: url('./assets/features/kendrick/131x131sr.jpg');
+  }
+
+  .bg-alpha {
+    background-image: url('./assets/features/alpha/131x131SC.DN01.jpg');
+  }
+
+  .bg-arcade {
+    width: 286px;
+    height: 161px;
+    background-size: 286px 161px;
+    background-image: url('./assets/features/arcade/286x161.jpg');
+  }
+
+  .bg-fitness {
+    width: 286px;
+    height: 161px;
+    background-size: 286px 161px;
+    background-image: url('./assets/features/strength/286x161.jpg');
+  }
+
+  .bg-kitty-island {
+    width: 286px;
+    height: 161px;
+    background-size: 286px 161px;
+    background-image: url('./assets/features/kitty-island/286x161.jpg');
+  }
+
+  .bg-workout {
+    width: 286px;
+    height: 161px;
+    background-size: 286px 161px;
+    background-image: url('./assets/features/workout/286x161.jpg');
+  }
+}
+
+@media only screen and (max-width: 734px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 734px) and (min-resolution: 144dpi) {
+  .bg-kendrick {
+    background-image: url('./assets/features/kendrick/228x228sr.jpg');
+  }
+
+  .bg-alpha {
+    background-image: url('./assets/features/alpha/228x228SC.DN01.jpg');
+  }
+
+  .bg-arcade {
+    background-image: url('./assets/features/arcade/476x268.jpg');
+  }
+
+  .bg-fitness {
+    background-image: url('./assets/features/strength/476x268.jpg');
+  }
+
+  .bg-kitty-island {
+    background-image: url('./assets/features/kitty-island/476x268.jpg');
+  }
+
+  .bg-workout {
+    background-image: url('./assets/features/workout/572x322.jpg');
+  }
+}
+
+@media screen and (max-width: 743px) {
+  .bg-kendrick {
+    background-image: url('./assets/features/kendrick/114x114sr.jpg');
+  }
+
+  .bg-alpha {
+    background-image: url('./assets/features/alpha/114x114SC.DN01.jpg');
+  }
+
+  .bg-arcade {
+    width: 238px;
+    height: 134px;
+    background-size: 238px 134px;
+    background-image: url('./assets/features/arcade/238x134.jpg');
+  }
+
+  .bg-fitness {
+    width: 238px;
+    height: 134px;
+    background-size: 238px 134px;
+    background-image: url('./assets/features/strength/238x134.jpg');
+  }
+
+  .bg-kitty-island {
+    width: 238px;
+    height: 134px;
+    background-size: 238px 134px;
+    background-image: url('./assets/features/kitty-island/238x134.jpg');
+  }
+
+  .bg-workout {
+    width: 238px;
+    height: 134px;
+    background-size: 238px 134px;
+    background-image: url('./assets/features/workout/238x134.jpg');
+  }
+}
+
+/* end gallery */
+
+@media screen and (max-width: 734px) {
+  .text-content {
+    margin: 0 auto 12px !important;
+    white-space: pre-wrap;
+  }
+}
+
+.text-para {
+  @apply text-white px-[15px] md:px-0 md:text-[17px] lg:text-[20px] font-light leading-[1.2] md:leading-[1.23536] md:text-left md:gap-[4px] text-center;
+}
+
+.btn {
+  @apply rounded-4xl text-[15px] font-medium cursor-pointer mt-5 px-5 py-2 transition-all duration-500;
+}
+
+.btn-lg {
+  @apply py-[8px] md:py-2 px-5 md:px-[26px] text-[16px] md:text-[18px]  rounded-4xl mr-3 transition-all duration-300 cursor-pointer;
+}
+
+.btn-blue {
+  @apply bg-blue-700 text-white hover:bg-blue-800;
+}
+
+.btn-light {
+  @apply text-gray-800 bg-gray-100 hover:bg-gray-50;
+}
+
+.btn-blue-border {
+  @apply border border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white;
+}
+
+.btn-light-border {
+  @apply border border-white text-white hover:bg-gray-100 hover:text-gray-950;
+}
+
+.active a span svg {
+  @apply opacity-0;
+}
+
+.active:hover a span svg {
+  @apply opacity-100 translate-x-2 duration-500;
+}
+
+.menuActive > div:first-child {
+  transform: rotate(45deg) translate(3px, -1px);
+}
+
+.menuActive > div:last-child {
+  transform: rotate(-45deg) translate(6px, -2px);
+}
+
+/* heroes */
+
+/* swiper wrapper */
+
+/* Ensure this CSS is loaded after Swiper's CSS */
+.swiper-effect {
+  /* transform: translate3d(-995px, 0, 0) !important; */
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+
+.swiper-effect .swiper-pagination-bullet {
+  @apply mx-[7px] w-[8px] h-[8px] relative  rounded-full;
+  -webkit-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
+}
+
+.swiper-effect .swiper-pagination-bullet-active {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Default: Hide the arrows */
+.swiper-effect .swiper-button-next,
+.swiper-effect .swiper-button-prev {
+  width: 169px !important;
+  height: 100% !important;
+  display: none;
+  top: 0 !important;
+}
+
+.swiper-smooth .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+
+@media screen and (max-width: 568px) {
+  .slick-track,
+  .slick-list {
+    height: var(--fam-item-height) !important;
+  }
+}
+
+.slick-track {
+  display: flex;
+}
+
+.slick-slide {
+  width: var(--fam-item-width) !important;
+  margin-left: var(--fam-item-margin);
+  display: flex !important;
+}
+
+.swiper-effect .swiper-button-prev {
+  left: 0 !important;
+}
+
+.swiper-effect .swiper-button-next {
+  right: 0 !important;
+}
+
+.swiper-effect .swiper-button-next::after,
+.swiper-effect .swiper-button-prev::after {
+  opacity: 0;
+}
+
+/* Show arrows only on screens smaller than 734px */
+@media (max-width: 734px) {
+  .swiper-effect .swiper-button-next,
+  .swiper-effect .swiper-button-prev {
+    display: flex !important;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-effect .swiper-button-next::after,
+  .swiper-effect .swiper-button-prev::after {
+    font-size: 28px !important;
+    font-weight: 800;
+    opacity: 0.8;
+    color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+@keyframes fadeInActive {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutInactive {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/* Default state for all slides */
+.swiper-effect .swiper-slide {
+  opacity: 0.3;
+}
+
+/* When a slide becomes active, it will fade in smoothly */
+.swiper-effect .swiper-slide-active {
+  animation: fadeInActive 0.8s ease-in-out forwards;
+}
+
+/* When a slide is inactive, apply fade out */
+.swiper-effect .swiper-slide:not(.swiper-slide-active) {
+  animation: fadeOutInactive 0.8s ease-in-out forwards;
+}
+
+.unit-image {
+  @apply absolute z-1  m-0 p-0 left-[calc(50%+0px)]  right-auto top-auto bottom-0 border-0 -translate-x-[50%];
+  background-repeat: no-repeat;
+}
+
+.promo-image {
+  @apply absolute z-1  m-0 p-0 left-[calc(50%+0px)]  right-auto top-0 bottom-0 border-0 -translate-x-[50%];
+  background-repeat: no-repeat;
+}
+
+/* iphone 16 pro */
+.iphone-16-pro {
+  width: 3008px;
+  height: 580px;
+  background-image: url('./assets/heroes/iphone-16-pro/hero_iphone16pro_avail__large.jpg');
+  background-size: 3008px 580px;
+}
+
+@media screen and (max-width: 1068px) {
+  .iphone-16-pro {
+    width: 1068px;
+    height: 570px;
+    background-image: url('./assets/heroes/iphone-16-pro/hero_iphone16pro_avail__medium_2x.jpg');
+    background-size: 1068px 570px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .iphone-16-pro {
+    width: 734px;
+    height: 500px;
+    background-image: url('./assets/heroes/iphone-16-pro/hero_iphone16pro_avail__small.jpg');
+    background-size: 734px 500px;
+  }
+}
+
+/* iphone 16  */
+
+.iphone-16 {
+  width: 3008px;
+  height: 580px;
+  background-image: url('./assets/heroes/iphone-16/hero_iphone16_avail__large.jpg');
+  background-size: 3008px 580px;
+}
+
+@media screen and (max-width: 1068px) {
+  .iphone-16 {
+    width: 1068px;
+    height: 570px;
+    background-image: url('./assets/heroes/iphone-16/hero_iphone16_avail__medium_2x.jpg');
+    background-size: 1068px 570px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .iphone-16 {
+    width: 734px;
+    height: 500px;
+    background-image: url('./assets/heroes/iphone-16/hero_iphone16_avail__small.jpg');
+    background-size: 734px 500px;
+  }
+}
+
+/* watch */
+
+.watch-s10 {
+  width: 3008px;
+  height: 580px;
+  background-image: url('./assets/heroes/apple-watch/hero_apple_watch_series__large.jpg');
+  background-size: 3008px 580px;
+}
+
+@media screen and (max-width: 1068px) {
+  .watch-s10 {
+    width: 1068px;
+    height: 570px;
+    background-image: url('./assets/heroes/apple-watch/hero_apple_watch_series__medium_2x.jpg');
+    background-size: 1068px 570px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .watch-s10 {
+    width: 734px;
+    height: 500px;
+    background-image: url('./assets/heroes/apple-watch/hero_apple_watch_series__small.jpg');
+    background-size: 734px 500px;
+  }
+}
+
+/* apple watch series 10 */
+
+.aws-10 {
+  width: 210px;
+  height: 80px;
+  background-image: url('./assets/logos/apple-watch-series-10/hero_logo_apple_watch_series_10__large.png');
+  background-size: 210px 80px;
+}
+
+@media screen and (max-width: 1068px) {
+  .aws-10 {
+    width: 177px;
+    height: 68px;
+    background-image: url('./assets/logos/apple-watch-series-10/hero_logo_apple_watch_series_10__medium_2x.png');
+    background-size: 177px 68px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .aws-10 {
+    width: 117px;
+    height: 45px;
+    background-image: url('./assets/logos/apple-watch-series-10/hero_logo_apple_watch_series_10__small.png');
+    background-size: 117px 45px;
+  }
+}
+
+/* Apple watch unity */
+
+.bg-apple-watch {
+  width: 1262px;
+  height: 580px;
+  background-image: url('./assets/promos/apple-watch-unity/promo_apple_watch_unity__large.jpg');
+  background-size: 1262px 580px;
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-apple-watch {
+    width: 516px;
+    height: 490px;
+    background-image: url('./assets/promos/apple-watch-unity/promo_apple_watch_unity__medium_2x.jpg');
+    background-size: 516px 490px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-apple-watch {
+    width: 734px;
+    height: 500px;
+    background-image: url('./assets/promos/apple-watch-unity/promo_apple_watch_unity__small.jpg');
+    background-size: 734px 500px;
+  }
+}
+
+/* valentines day */
+
+.bg-valentines-day {
+  width: 1262px;
+  height: 580px;
+  background-image: url('./assets/promos/valentines-day-2025/promo_valentines_day_2025_announce__large.png');
+  background-size: 1262px 580px;
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-valentines-day {
+    width: 516px;
+    height: 490px;
+    background-image: url('./assets/promos/valentines-day-2025/promo_valentines_day_2025_announce__medium_2x.png');
+    background-size: 516px 490px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-valentines-day {
+    width: 734px;
+    height: 500px;
+    background-image: url('./assets/promos/valentines-day-2025/promo_valentines_day_2025_announce__small.png');
+    background-size: 734px 500px;
+  }
+}
+
+/* Fitness plus */
+
+.bg-fitness-plus {
+  width: 1262px;
+  height: 580px;
+  background-image: url('./assets/promos/fitness-plus/promo_apple_fitness_plus_kendrick__large.jpg');
+  background-size: 1262px 580px;
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-fitness-plus {
+    width: 516px;
+    height: 490px;
+    background-image: url('./assets/promos/fitness-plus/promo_apple_fitness_plus_kendrick__medium_2x.jpg');
+    background-size: 516px 490px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-fitness-plus {
+    width: 734px;
+    height: 500px;
+    background-image: url('./assets/promos/fitness-plus/promo_apple_fitness_plus_kendrick__small.jpg');
+    background-size: 734px 500px;
+  }
+}
+
+/* MacBook Air */
+
+.bg-macbook-air {
+  width: 1262px;
+  height: 580px;
+  background-image: url('./assets/promos/macbook-air-m3/promo_macbook_air_m3__large.jpg');
+  background-size: 1262px 580px;
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-macbook-air {
+    width: 516px;
+    height: 490px;
+    background-image: url('./assets/promos/macbook-air-m3/promo_macbook_air_m3__medium_2x.jpg');
+    background-size: 516px 490px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-macbook-air {
+    width: 734px;
+    height: 500px;
+    background-image: url('./assets/promos/macbook-air-m3/promo_macbook_air_m3__small.jpg');
+    background-size: 734px 500px;
+  }
+}
+
+/* Iphone Tradein */
+
+.bg-iphone-tradein {
+  width: 1262px;
+  height: 580px;
+  background-image: url('./assets/promos/iphone-tradein/promo_iphone_tradein__large.jpg');
+  background-size: 1262px 580px;
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-iphone-tradein {
+    width: 516px;
+    height: 490px;
+    background-image: url('./assets/promos/iphone-tradein/promo_iphone_tradein__medium_2x.jpg');
+    background-size: 516px 490px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-iphone-tradein {
+    width: 734px;
+    height: 500px;
+    background-image: url('./assets/promos/iphone-tradein/promo_iphone_tradein__small.jpg');
+    background-size: 734px 500px;
+  }
+}
+
+/* Apple Card */
+
+.bg-apple-card {
+  width: 1262px;
+  height: 580px;
+  background-image: url('./assets/promos/apple-card/promo_apple_card__large.jpg');
+  background-size: 1262px 580px;
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-apple-card {
+    width: 516px;
+    height: 490px;
+    background-image: url('./assets/promos/apple-card/promo_apple_card__medium_2x.jpg');
+    background-size: 516px 490px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-apple-card {
+    width: 734px;
+    height: 500px;
+    background-image: url('./assets/promos/apple-card/promo_apple_card__small.jpg');
+    background-size: 734px 500px;
+  }
+}
+
+/* logos */
+
+/* apple watch promotion */
+
+.apple-watch {
+  width: 149px;
+  height: 34px;
+  background-image: url('./assets/logos/apple-watch-unity/promo_logo_apple_watch_unity__large.png');
+  background-size: 149px 34px;
+}
+
+@media screen and (max-width: 1068px) {
+  .apple-watch {
+    width: 116px;
+    height: 27px;
+    background-image: url('./assets/logos/apple-watch-unity/promo_logo_apple_watch_unity__medium_2x.png');
+    background-size: 116px 27px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .apple-watch {
+    width: 116px;
+    height: 27px;
+    background-image: url('./assets/logos/apple-watch-unity/promo_logo_apple_watch_unity__small.png');
+    background-size: 116px 27px;
+  }
+}
+
+/* fitness plus */
+
+.fitness-plus {
+  width: 177px;
+  height: 39px;
+  background-image: url('./assets/logos/fitness/promo_logo_apple_fitness_plus_kendrick__large.png');
+  background-size: 177px 39px;
+}
+
+@media screen and (max-width: 1068px) {
+  .fitness-plus {
+    width: 140px;
+    height: 31px;
+    background-image: url('./assets/logos/fitness/promo_logo_apple_fitness_plus_kendrick__medium.png');
+    background-size: 140px 31px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .fitness-plus {
+    width: 139px;
+    height: 31px;
+    background-image: url('./assets/logos/fitness/promo_logo_apple_fitness_plus_kendrick__small.png');
+    background-size: 139px 31px;
+  }
+}
+
+/* trade in */
+
+.iphone-tradein {
+  width: 155px;
+  height: 32px;
+  background-image: url('./assets/logos/iphone-tradein/promo_logo_iphone_tradein__large.png');
+  background-size: 155px 32px;
+}
+
+@media screen and (max-width: 1068px) {
+  .iphone-tradein {
+    width: 127px;
+    height: 27px;
+    background-image: url('./assets/logos/iphone-tradein/promo_logo_iphone_tradein__medium_2x.png');
+    background-size: 127px 27px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .iphone-tradein {
+    width: 128px;
+    height: 28px;
+    background-image: url('./assets/logos/iphone-tradein/promo_logo_iphone_tradein__small.png');
+    background-size: 128px 28px;
+  }
+}
+
+/* Apple Card */
+
+.apple-card {
+  width: 108px;
+  height: 33px;
+  background-image: url('./assets/logos/apple-card/logo__large.png');
+  background-size: 108px 33px;
+}
+
+@media screen and (max-width: 1068px) {
+  .apple-card {
+    width: 88px;
+    height: 28px;
+    background-image: url('./assets/logos/apple-card/logo__medium_2x.png');
+    background-size: 88px 28px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .apple-card {
+    width: 88px;
+    height: 27px;
+    background-image: url('./assets/logos/apple-card/logo__small.png');
+    background-size: 88px 27px;
+  }
+}
+
+/* container */
+
+@media screen and (max-width: 1182px) {
+  .container {
+    @apply max-w-[85%] mx-auto;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .container {
+    @apply max-w-[96%] mx-auto;
+  }
+}
+
+@media screen and (max-width: 378px) {
+  .md-sm-screen {
+    @apply text-[20px];
+  }
+}
+
+/* media query for height */
+
+@media screen and (min-width: 1441px) {
+  .md-h {
+    height: 580px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .md-h {
+    height: 580px;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .md-h {
+    height: 490px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .md-h {
+    height: 500;
+  }
+}
+
+/* Gallery */
+
+.inner {
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7)),
+    -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(255, 255, 255, 0)
+          200px);
+  background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(255, 255, 255, 0) 200px);
+  @apply absolute top-0 left-0 h-full w-full;
+}
+
+.gallery {
+  @apply bg-cover bg-center w-[980px] mx-auto h-full block;
+}
+
+.shadow {
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 1068px) {
+  .gallery {
+    @apply w-[689px];
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .gallery {
+    @apply bg-top w-[274px];
+  }
+}
+
+/* severance */
+
+.bg-severance {
+  background-image: url('./assets/features/severances/large.jpg');
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-severance {
+    background-image: url('./assets/features/severances/medium.jpg');
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-severance {
+    background-image: url('./assets/features/severances/small.jpg');
+  }
+}
+
+/* prime target */
+
+.bg-prime {
+  background-image: url('./assets/features/prime-target/large.jpg');
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-prime {
+    background-image: url('./assets/features/prime-target/medium.jpg');
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-prime {
+    background-image: url('./assets/features/prime-target/small.jpg');
+  }
+}
+
+/* mythic quest */
+
+.bg-mythic-quest {
+  background-image: url('./assets/features/mythic-quest/large.jpg');
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-mythic-quest {
+    background-image: url('./assets/features/mythic-quest/medium.jpg');
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-mythic-quest {
+    background-image: url('./assets/features/mythic-quest/small.jpg');
+  }
+}
+
+/* Silo */
+
+.bg-silo {
+  background-image: url('./assets/features/silo/large.jpg');
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-silo {
+    background-image: url('./assets/features/silo/medium.jpg');
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-silo {
+    background-image: url('./assets/features/silo/small.jpg');
+  }
+}
+
+/* shrinking */
+
+.bg-shrinking {
+  background-image: url('./assets/features/shrinking/large.jpg');
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-shrinking {
+    background-image: url('./assets/features/shrinking/medium.jpg');
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-shrinking {
+    background-image: url('./assets/features/shrinking/small.jpg');
+  }
+}
+
+/* ted lasso */
+
+.bg-ted {
+  background-image: url('./assets/features/ted/large.jpg');
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-ted {
+    background-image: url('./assets/features/ted/medium.jpg');
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-ted {
+    background-image: url('./assets/features/ted/small.jpg');
+  }
+}
+
+/* love you to death */
+
+.bg-love {
+  background-image: url('./assets/features/love/large.jpg');
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-love {
+    background-image: url('./assets/features/love/medium.jpg');
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-love {
+    background-image: url('./assets/features/love/small.jpg');
+  }
+}
+
+/* fly to the moon */
+
+.bg-fly {
+  background-image: url('./assets/features/fly-to-moon/large.jpg');
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-fly {
+    background-image: url('./assets/features/fly-to-moon/medium.jpg');
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-fly {
+    background-image: url('./assets/features/fly-to-moon/small.jpg');
+  }
+}
+
+/* slow horses */
+
+.bg-slow-horses {
+  background-image: url('./assets/features/slow-horses/large.jpg');
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-slow-horses {
+    background-image: url('./assets/features/slow-horses/medium.jpg');
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-slow-horses {
+    background-image: url('./assets/features/slow-horses/small.jpg');
+  }
+}
+
+/* bad sisters */
+
+.bg-bad-sis {
+  background-image: url('./assets/features/bad-sisters/large.jpg');
+}
+
+@media screen and (max-width: 1068px) {
+  .bg-bad-sis {
+    background-image: url('./assets/features/bad-sisters/medium.jpg');
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .bg-bad-sis {
+    background-image: url('./assets/features/bad-sisters/small.jpg');
+  }
+}
+
+/* gallery logo */
+
+/* severance logo */
+.severance-logo {
+  background-image: url('./assets/logos/severnance/548x97.png');
+}
+
+/* prime target logo */
+.prime-logo {
+  background-image: url('./assets/logos/prime-target/548x97.png');
+}
+
+/* mythic quest logo */
+
+.mythic-logo {
+  background-image: url('./assets/logos/mythic-quest/548x97.png');
+}
+
+/* silo logo */
+.silo-logo {
+  background-image: url('./assets/logos/silo/548x97.png');
+}
+
+/* shrinking logo */
+
+.shrinking-logo {
+  background-image: url('./assets/logos/shrinking/548x71.png');
+}
+
+/* ted lasso logo */
+
+.ted-logo {
+  background-image: url('./assets/logos/ted/548x82.png');
+}
+
+/* love to death logo */
+
+.love-logo {
+  background-image: url('./assets/logos/love/548x271.png');
+}
+
+/* fly to the moon logo */
+
+.fly-logo {
+  background-image: url('./assets/logos/fly/548x92.png');
+}
+
+/* slow horses logo */
+
+.slow-horses-logo {
+  background-image: url('./assets/logos/slow-horses/548x116.png');
+}
+
+/* bad sisters logo */
+
+.bad-sis-logo {
+  background-image: url('./assets/logos/bad-sis/548x181.png');
+}
+
+.logo {
+  @apply w-[220px] h-[54px] block bg-no-repeat bg-contain bg-top mx-auto;
+}
+
+/* tv Plus */
+
+.tv-plus {
+  width: 68px;
+  height: 33px;
+  margin: 20px auto 5px;
+  background-image: url('./assets/logos/apple-hero-light/logo_hero_light__large.png');
+  background-size: 119px 46px;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1068px) {
+  .tv-plus {
+    background-image: url('./assets/logos/apple-hero-light/logo_hero_light__medium.png');
+    background-size: 92px 36px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+  .tv-plus {
+    background-image: url('./assets/logos/apple-hero-light/logo_hero_light__small.png');
+    background-size: 69px 27px;
+  }
+}
+
+/* footer */
+.footer-item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding-top: 20px;
+}
+
+.mobile-block {
+  display: none;
+}
+
+@media screen and (max-width: 833px) {
+  .footer-item {
+    flex-direction: column;
+  }
+
+  footer h3 {
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .rotate {
+    transform: rotateX(180deg);
+    transition: transform 0.3s ease;
+  }
+
+  .bb-mobile {
+    border-bottom: 1.2px solid rgba(0, 0, 0, 0.16);
+  }
+
+  .footer-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.6s ease;
+  }
+
+  .footer-list.active {
+    max-height: 330px;
+    transition: all 0.6s ease;
+  }
+
+  .mobile-block {
+    display: block;
+  }
+}
+
+@theme {
+  --color-gray-50: rgba(255, 255, 255, 0.88);
+  --color-gray-100: #f5f5f5;
+  --color-gray-150: rgb(245, 245, 247);
+  --color-gray-700: rgba(22, 22, 23, 0.8);
+  --color-gray-750: rgba(0, 0, 0, 0.16);
+  --color-gray-800: rgb(24, 24, 24);
+  --color-gray-850: rgba(0, 0, 0, 0.56);
+  --color-gray-860: rgba(0, 0, 0, 0.72);
+  --color-gray-450: rgba(0, 0, 0, 0.48);
+  --color-gray-550: rgba(0, 0, 0, 0.78);
+  --color-gray-900: #161617;
+  --color-gray-950: #1d1d1f;
+
+  --color-blue-700: #0071e3;
+  --color-blue-800: #0077ed;
+
+  --breakpoint-md: 45.875rem;
+  --breakpoint-lg: 64.75rem;
+}
