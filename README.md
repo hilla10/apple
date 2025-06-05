@@ -6,7 +6,7 @@ A responsive clone of the official Apple homepage built for learning and practic
 
 ## 📸 Screenshots
 
-![Screenshot](./screenshot.png)
+![Screenshot](./ScreenShot%20Tool%20-20250605192157.png)
 
 ## 📚 Features
 
