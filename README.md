@@ -25,7 +25,7 @@ A responsive clone of the official Apple homepage built for learning and practic
 - Deployed on Vercel
 
 ## 📂 Folder Structure
-
+```
 apple-homepage-clone/
 ├── public/
 ├── src/
@@ -35,6 +35,7 @@ apple-homepage-clone/
 ├── styles/
 ├── README.md
 └── ...
+```
 
 
 ## 🧠 Lessons Learned
