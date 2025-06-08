@@ -58,7 +58,7 @@ This is a personal project created for educational purposes only. All trademarks
 ## 🧑‍💻 Author
 
 - **Hailemichael Negusse**
-- [(https://github.com/hilla10)
+- [Email Address](https://github.com/hilla10)
 
 ## 📄 License
 
